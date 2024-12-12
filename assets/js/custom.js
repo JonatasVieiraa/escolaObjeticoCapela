@@ -11,10 +11,6 @@
 	  return false;
 	});});
 
-
-	videoPopup();
-
-
 	$('.owl-carousel').owlCarousel({
 	    loop:true,
 	    margin:30,

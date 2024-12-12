@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /* Impede scroll horizontal */
   width: 100%;
 }
 
@@ -37,10 +36,8 @@ a {
 
 /* Buttons */
 .container-button {
-  /* Nome da classe do container do botão */
   display: flex;
   justify-content: center;
-  /* Centraliza horizontalmente */
 }
 
 .cta {
@@ -137,13 +134,9 @@ a {
   text-decoration: none;
   cursor: pointer;
   box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.5);
-  /* Sombra pulsante */
   animation: pulse 1.5s infinite;
-  /* Animação pulsante */
   transition: background-color 0.3s ease, color 0.3s ease;
-  /* Transição suave para mudança de cor */
 }
-
 
 .whatsapp-button:hover {
   background-color: #ffffff;
@@ -171,22 +164,16 @@ a {
 }
 
 
-/* Header */
+/* Header - mantém o estilo original até 830px */
 .main-header {
   background-color: rgba(22, 34, 57, 0.95);
   height: 120px;
   display: flex;
-  /* Define o flexbox para o header */
   align-items: center;
-  /* Alinha verticalmente os itens */
   justify-content: space-between;
-  /* Distribui o espaço entre logo e menu */
   padding: 0 2rem;
-  /* Adiciona padding horizontal */
   position: fixed;
-  /* Mantém o header fixo */
   top: 0;
-  /* Posiciona o header no topo */
   left: 0;
   width: 100%;
   z-index: 12;
@@ -198,32 +185,75 @@ a {
 }
 
 .main-menu li {
+  list-style: none;
   display: inline-block;
-  margin: 0 1rem;
+  margin: 10px;
   overflow: hidden;
-  /* Necessário para o efeito de escala */
+  position: relative;
 }
 
 .main-menu li a {
-  display: block;
-  /* Transforma o link em um bloco para que a transformação de escala funcione corretamente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 15px;
   font-size: 18px;
   text-transform: uppercase;
+  letter-spacing: 1px;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
-  transition: transform 0.3s ease;
-  /* Adiciona uma transição suave */
+  background-color: transparent;
+  transition: .2s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+}
+
+.main-menu li a::after {
+  content: '';
+  border-bottom: 3px double rgb(214, 207, 113);
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  visibility: hidden;
+  opacity: 1;
+  transition: .2s linear;
+}
+
+.main-menu li a:hover::after {
+  visibility: visible;
+  opacity: 0.7;
+  width: 90%;
 }
 
 .main-menu li a:hover {
-  transform: scale(1.1);
-  /* Aumenta a escala em 10% ao passar o mouse */
+  letter-spacing: 2px;
 }
 
 .logo {
   margin-left: 4rem;
+}
+
+/* Estilos para o menu hamburger */
+.menu-link {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 2;
+  margin-right: 2rem;
+}
+
+.menu-link span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  /* Mudei para branco para combinar com o header */
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Slider */
@@ -289,8 +319,6 @@ a {
   color: #ffd700;
   font-weight: bolder;
 }
-
-
 
 /* Features */
 
@@ -414,7 +442,6 @@ section.why-us {
 #tabs p {
   color: #fff;
   font-size: 20px;
-
 }
 
 #tabs ul li {
@@ -493,43 +520,27 @@ section.coming-soon {
   background-size: cover;
   background-color: #172238;
   padding-top: 7rem;
-  padding-bottom: 15rem;
+  padding-bottom: 12rem;
   color: #ffffff;
 }
 
 .swiper {
-  width: 50%;
-  height: 500px;
-  border: 5px solid #FFD700;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
-  top: 3.5rem;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
+  width: 500px;
+  height: 500px;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  /* Arredondando as bordas da imagem */
-}
-
-/* Estilização dos botões de navegação */
-.swiper-button-next,
-.swiper-button-prev {
-  color: #0000ee;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
+  height: auto;
 }
 
 /* Courses */
@@ -669,6 +680,8 @@ section.contact {
 
 .colorful-form {
   max-width: 400px;
+  height:
+    450px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f5f5f5;
@@ -696,7 +709,7 @@ section.contact {
 }
 
 textarea.form-input {
-  height: 100px;
+  height: 140px;
 }
 
 .form-button {
@@ -760,127 +773,661 @@ footer {
   text-decoration: underline;
 }
 
-/* Media Queries Agrupadas e Otimizadas */
+/* Media Queries Avançadas e Otimizadas */
 
-@media (max-width: 1180px) {
+/* Breakpoint Extra Large */
+@media (max-width: 1470px) {
   .main-banner .caption h2 {
-    font-size: 58px;
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 1229px) {
+  .main-banner .caption h2 {
+    font-size: 4rem;
+  }
+}
+
+/* Breakpoint Large */
+@media (max-width: 1024px) {
+
+
+  .main-header .logo {
+    position: relative;
+    right: 3rem;
+  }
+
+  section.why-us {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .section-heading h2 {
+    font-size: 2.5rem;
+  }
+
+  #tabs ul li a {
+    font-size: 15px;
+  }
+
+  #tabs h4 {
+    font-size: 28px;
+    position: relative;
+    left: 2rem;
+  }
+
+  #tabs p {
+    font-size: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    left: 2rem;
+
+  }
+
+  .col-md-6 img {
+    width: 500px;
+    position: relative;
+    top: 2rem;
+  }
+
+  #tabs ul li {
+    margin: 0 10px;
+  }
+
+  #tabs ul li a::after {
+    content: '';
+    border-bottom: 3px double rgb(214, 207, 113);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    visibility: hidden;
+    opacity: 1;
+    transition: .2s linear;
+  }
+
+  #tabs ul li a:hover::after {
+    visibility: visible;
+    width: 100%;
+  }
+
+  #tabs ul li a:hover {
+    color: rgb(214, 207, 113);
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .whatsapp-button {
+    width: 140px;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    position: relative;
+    left: 2.5rem;
+  }
+
+  .whatsapp-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+  }
+
+  section.video {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  section.video .left-content {
+    margin-right: 0px;
+    font-size: 1.5rem;
+  }
+
+  .video-item {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    top: -1rem;
+    right: 4.5rem;
+  }
+
+  .video-item figure a:before {
+    content: '';
+    position: absolute;
+    top: 31.8rem;
+    width: 60px;
+    height: 60px;
+    left: 26rem;
+  }
+
+  .video-item figure a:after {
+    content: '';
+    position: absolute;
+    top: 30.8rem;
+    left: 25.8rem;
+  }
+
+  .video-item .video-caption {
+    position: relative;
+    top: 29.3rem;
+    width: 500px;
+  }
+
+  section.video {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  section.contact {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 30px;
+  }
+
+  #map iframe {
+    height: 450px;
+    width: 530px;
+  }
+
+  footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .contact-info h3,
+  .policies h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-info p,
+  .policies ul li {
+    font-size: 0.9rem;
+  }
+
+  .social-media a {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 992px) {
-  .features {
-    background-color: #0c1228;
-  }
 
-  .features-content {
-    position: relative;
-  }
 
-  .features-post {
-    border-left: 0;
-  }
-
-  /* Estilos específicos para tablets */
-  .swiper {
-    width: 80%;
-    /* Ajuste para tablets */
-    height: 400px;
-    /* Ajuste para tablets */
-  }
-}
-
-@media (max-width: 950px) {
   .main-header .logo {
     position: relative;
-    left: 0;
-    /* Centraliza no mobile */
-    bottom: 0;
+    right: 3rem;
   }
 
-  a.menu-link {
-    font-size: 24px;
-    /* Tamanho menor no mobile */
-    padding-right: 15px;
-    /* Padding menor no mobile */
-    padding-top: 10px;
-    /* Padding menor no mobile */
+  section.why-us {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 
-  nav[role="navigation"] {
-    transition: all 0.3s ease-out;
+  .section-heading h2 {
+    font-size: 2.5rem;
   }
 
-  .js nav[role="navigation"] {
-    overflow: hidden;
-    max-height: 0;
+  #tabs ul li a {
+    font-size: 15px;
   }
 
-  nav[role="navigation"].active {
-    max-height: 100vh;
-    /* Altura total da tela no mobile */
-    overflow-y: auto;
-  }
-
-  nav[role="navigation"] ul {
-    border-top: 1px solid rgba(250, 250, 250, 0.25);
-    background-color: rgba(22, 34, 57, 0.99);
-  }
-
-  nav[role="navigation"] li a {
-    font-size: 14px;
-    /* Tamanho de fonte ajustado para mobile */
-  }
-
-  .main-menu {
-    padding-right: 0 !important;
-    padding-top: 10px;
-    /* Padding menor no mobile */
-  }
-
-  .main-menu li {
-    margin-left: 0 !important;
-  }
-
-  .main-menu li .sub-menu {
-    margin: 0;
-    /* Sem margem no mobile */
-  }
-}
-
-@media (max-width: 767px) {
-
-  /* Estilos específicos para mobile */
-  .main-banner .caption h2 {
+  #tabs h4 {
     font-size: 28px;
-    /* Tamanho menor no mobile */
+    position: relative;
+    left: 2rem;
   }
 
-  .swiper {
-    width: 90%;
-    /* Ajuste para mobile */
-    height: 300px;
-    /* Ajuste para mobile */
+  #tabs p {
+    font-size: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    left: 2rem;
+
   }
 
-  #tabs ul {
-    flex-direction: column;
-    /* Itens da lista um abaixo do outro no mobile */
+  .col-md-6 img {
+    width: 500px;
+    position: relative;
+    top: 2rem;
   }
 
-  .tabs-content img {
-    max-width: 100%;
-    /* Imagens responsivas no mobile */
+  #tabs ul li {
+    margin: 0 10px;
+  }
+
+  #tabs ul li a::after {
+    content: '';
+    border-bottom: 3px double rgb(214, 207, 113);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    visibility: hidden;
+    opacity: 1;
+    transition: .2s linear;
+  }
+
+  #tabs ul li a:hover::after {
+    visibility: visible;
+    width: 100%;
+  }
+
+  #tabs ul li a:hover {
+    color: rgb(214, 207, 113);
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .whatsapp-button {
+    width: 140px;
     height: auto;
+    padding: 10px;
+    font-size: 16px;
+    position: relative;
+    left: 2.5rem;
+  }
+
+  .whatsapp-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+  }
+
+  section.video {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  section.video .left-content {
+    margin-right: 0px;
+    font-size: 1.5rem;
   }
 
   .video-item {
-    max-width: 100%;
-    /* Largura máxima no mobile */
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    top: -1rem;
+    right: 4.5rem;
   }
 
-  .features-content h4 i {
-    font-size: 18px;
-    /* Tamanho menor no mobile */
+  .video-item figure a:before {
+    content: '';
+    position: absolute;
+    top: 31.8rem;
+    width: 60px;
+    height: 60px;
+    left: 26rem;
+  }
+
+  .video-item figure a:after {
+    content: '';
+    position: absolute;
+    top: 30.8rem;
+    left: 25.8rem;
+  }
+
+  .video-item .video-caption {
+    position: relative;
+    top: 29.3rem;
+    width: 500px;
+  }
+
+  section.video {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  section.contact {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 30px;
+  }
+
+  #map iframe {
+    height: 450px;
+    width: 530px;
+  }
+
+  footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .contact-info h3,
+  .policies h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-info p,
+  .policies ul li {
+    font-size: 0.9rem;
+  }
+
+  .social-media a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 830px) {
+  .main-header {
+    height: 120px;
+    padding: 30px;
+  }
+
+  .logo {
+    margin-left: 19rem;
+  }
+
+  .main-nav {
+    display: none;
+    /* Esconde o menu principal */
+  }
+
+  .menu-link {
+    display: block;
+    /* Mostra o botão hamburger */
+  }
+
+  #menu {
+    display: none;
+    position: fixed;
+    top: 120px;
+    /* Alinha com a nova altura do header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(22, 34, 57, 0.4);
+    z-index: 11;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  #menu.menu-open {
+    display: block;
+  }
+
+  #menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  #menu li {
+    width: 50%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  section.why-us {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .section-heading h2 {
+    font-size: 2.5rem;
+  }
+
+  #tabs ul li a {
+    font-size: 15px;
+  }
+
+  #tabs h4 {
+    font-size: 28px;
+    position: relative;
+    left: 2rem;
+  }
+
+  #tabs p {
+    font-size: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    left: 2rem;
+
+  }
+
+  .col-md-6 img {
+    width: 500px;
+    position: relative;
+    top: 2rem;
+  }
+
+  #tabs ul li {
+    margin: 0 10px;
+  }
+
+  #tabs ul li a::after {
+    content: '';
+    border-bottom: 3px double rgb(214, 207, 113);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    visibility: hidden;
+    opacity: 1;
+    transition: .2s linear;
+  }
+
+  #tabs ul li a:hover::after {
+    visibility: visible;
+    width: 100%;
+  }
+
+  #tabs ul li a:hover {
+    color: rgb(214, 207, 113);
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .whatsapp-button {
+    width: 140px;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    position: relative;
+    left: 2.5rem;
+  }
+
+  .whatsapp-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+  }
+
+  section.video {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  section.video .left-content {
+    margin-right: 0px;
+    font-size: 1.5rem;
+  }
+
+  .video-item {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    top: -1rem;
+    right: 4.5rem;
+  }
+
+  .video-item figure a:before {
+    content: '';
+    position: absolute;
+    top: 31.8rem;
+    width: 60px;
+    height: 60px;
+    left: 26rem;
+  }
+
+  .video-item figure a:after {
+    content: '';
+    position: absolute;
+    top: 30.8rem;
+    left: 25.8rem;
+  }
+
+  .video-item .video-caption {
+    position: relative;
+    top: 29.3rem;
+    width: 500px;
+  }
+
+  section.video {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  section.contact {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 30px;
+  }
+
+  #map iframe {
+    height: 450px;
+    width: 530px;
+  }
+
+  footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .contact-info h3,
+  .policies h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-info p,
+  .policies ul li {
+    font-size: 0.9rem;
+  }
+
+  .social-media a {
+    font-size: 1.2rem;
+  }
+}
+
+/* Estilos para o menu aberto */
+.menu-open .menu-link span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open .menu-link span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-open .menu-link span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Breakpoint Small */
+@media (max-width: 767px) {
+
+  /* Títulos e textos */
+  .main-banner .caption h2 {
+    font-size: 28px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  /* Elementos visuais */
+  .swiper {
+    width: 90%;
+    height: 300px;
+  }
+
+  /* Tabs */
+  #tabs ul {
+    flex-direction: column;
+  }
+
+  #tabs ul li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* Imagens */
+  .tabs-content img,
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Vídeo */
+  .video-item {
+    max-width: 100%;
+  }
+
+  /* Rodapé */
+  footer .row {
+    flex-direction: column;
+  }
+
+  footer .col-md-6 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Breakpoint Extra Small */
+@media (max-width: 480px) {
+  .main-banner .caption h6 {
+    font-size: 1rem;
+  }
+
+  .main-banner .caption h2 {
+    font-size: 24px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Botões */
+  .cta {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Ajustes finos para dispositivos muito pequenos */
+  .container {
+    padding: 0 10px;
   }
 }
