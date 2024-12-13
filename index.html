@@ -79,18 +79,22 @@
     <div class="container">
       <div class="row" data-aos="fade-right">
         <div class="col-md-12">
+
           <div class="section-heading" data-aos="fade">
             <h2 id="cta">Confira nossa grade de ensino</h2>
           </div>
         </div>
         <div class="col-md-12">
           <div id='tabs'>
-            <ul>
-              <li><a href='#tabs-1'>Ensino Infantil </a></li>
-              <li><a href='#tabs-2'>Ensino Fundamental I </a></li>
-              <li><a href='#tabs-3'>Ensino Fundamental II </a></li>
-              <li><a href='#tabs-4'>Ensino Médio </a></li>
-            </ul>
+            <div class="dropdown">
+              <button class="dropdown-btn">Click!</button>
+              <ul class="dropdown-content">
+                <li><a href='#tabs-1'>Ensino Infantil </a></li>
+                <li><a href='#tabs-2'>Ensino Fundamental I </a></li>
+                <li><a href='#tabs-3'>Ensino Fundamental II </a></li>
+                <li><a href='#tabs-4'>Ensino Médio </a></li>
+              </ul>
+            </div>
             <section class='tabs-content'>
               <article id='tabs-1'>
                 <div class="row">
@@ -171,7 +175,6 @@
 
   <section class="section coming-soon" data-section="section3">
     <div class="content-wrapper" data-aos="fade-left">
-
       <!-- Swiper -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -478,6 +481,7 @@
     // ... (seu código JavaScript anterior) ...
   </script>
   <!-- Bootstrap core JavaScript -->
+  <script src="assets/js/dropdown.js"></script>
   <script src="assets/js/menuhamburger.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/isotope.min.js"></script>

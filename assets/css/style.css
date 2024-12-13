@@ -773,6 +773,10 @@ footer {
   text-decoration: underline;
 }
 
+.dropdown-btn {
+  display: none;
+}
+
 /* Media Queries Avançadas e Otimizadas */
 
 /* Breakpoint Extra Large */
@@ -1129,25 +1133,35 @@ footer {
     padding: 30px;
   }
 
+  .header-text .caption h6 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .header-text .caption h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
   .logo {
-    margin-left: 19rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .main-nav {
     display: none;
-    /* Esconde o menu principal */
   }
 
   .menu-link {
     display: block;
-    /* Mostra o botão hamburger */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #menu {
     display: none;
     position: fixed;
     top: 120px;
-    /* Alinha com a nova altura do header */
     left: 0;
     width: 100%;
     background-color: rgba(22, 34, 57, 0.4);
@@ -1169,47 +1183,83 @@ footer {
   }
 
   #menu li {
-    width: 50%;
+    width: 100%;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  section.why-us {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+  #menu li a {
+    padding: 15px 0;
+    font-size: 16px;
   }
 
-  .section-heading h2 {
-    font-size: 2.5rem;
+  .tabs-content .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabs-content .row .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabs-content .row .col-md-6 img {
+    max-width: 200%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0
+  }
+
+  #tabs {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  #tabs ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   #tabs ul li a {
-    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    position: relative;
+    background-color: transparent;
+    transition: .2s cubic-bezier(0.19, 1, 0.22, 1);
+    color: #fff;
+    text-decoration: none;
   }
 
   #tabs h4 {
-    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
     position: relative;
-    left: 2rem;
+    top: 0;
+    left: 0;
   }
 
   #tabs p {
-    font-size: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    text-align: center;
     position: relative;
-    left: 2rem;
-
-  }
-
-  .col-md-6 img {
-    width: 500px;
-    position: relative;
-    top: 2rem;
+    top: 0;
+    left: 0;
+    font-size: 24px;
   }
 
   #tabs ul li {
-    margin: 0 10px;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 
   #tabs ul li a::after {
@@ -1231,22 +1281,105 @@ footer {
   }
 
   #tabs ul li a:hover {
-    color: rgb(214, 207, 113);
+    color: #D6CF71;
   }
 
-  /* Buttons */
-  .btn {
-    padding: 10px 20px;
+  #tabs ul li a.active::after {
+    visibility: visible;
+    width: 100%;
+  }
+
+  .dropdown-btn {
+    display: block;
+    background-color: #16224A;
+    color: #ffffff;
+    padding: 12px 24px;
     font-size: 16px;
+    border: 2px solid #D6CF71;
+    border-radius: 8px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 96%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown-btn:hover {
+    background-color: #D6CF71;
+    color: #16224A;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  .dropdown-content {
+    display: none;
+    background-color: rgba(22, 34, 57, 0.9);
+    border-radius: 8px;
+    margin-top: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown-content li {
+    padding: 10px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(214, 207, 113, 0.2);
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown-content li:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-content li:hover {
+    background-color: rgba(214, 207, 113, 0.2);
+  }
+
+  .dropdown-content li a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+  }
+
+  .section-heading h2 {
+    font-size: 36px;
+    text-align: center;
+    position: relative;
+    bottom: 3rem;
+  }
+
+  .section-heading p {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .whatsapp-button {
-    width: 140px;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 20px 10px;
+    border-radius: 25px;
+    background-color: #25D366;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.5);
+    transition: box-shadow 0.3s ease;
     position: relative;
-    left: 2.5rem;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .whatsapp-button img {
@@ -1257,47 +1390,22 @@ footer {
     top: 1px;
   }
 
-  section.video {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+  .coming-soon {
+    padding: 100px 0;
   }
 
-  section.video .left-content {
-    margin-right: 0px;
-    font-size: 1.5rem;
-  }
-
-  .video-item {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    top: -1rem;
-    right: 4.5rem;
-  }
-
-  .video-item figure a:before {
-    content: '';
-    position: absolute;
-    top: 31.8rem;
-    width: 60px;
-    height: 60px;
-    left: 26rem;
-  }
-
-  .video-item figure a:after {
-    content: '';
-    position: absolute;
-    top: 30.8rem;
-    left: 25.8rem;
-  }
-
-  .video-item .video-caption {
-    position: relative;
-    top: 29.3rem;
-    width: 500px;
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   section.video {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+ 
+
+  section.courses {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
@@ -1306,16 +1414,21 @@ footer {
     padding-top: 8rem;
     padding-bottom: 8rem;
     padding-left: 30px;
+    text-align: center;
   }
 
   #map iframe {
     height: 450px;
     width: 530px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 
   footer {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    text-align: center;
   }
 
   .contact-info h3,
@@ -1331,20 +1444,20 @@ footer {
   .social-media a {
     font-size: 1.2rem;
   }
+
+  .menu-open .menu-link span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-open .menu-link span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-open .menu-link span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }
 
-/* Estilos para o menu aberto */
-.menu-open .menu-link span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-open .menu-link span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-open .menu-link span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
 
 /* Breakpoint Small */
 @media (max-width: 767px) {
