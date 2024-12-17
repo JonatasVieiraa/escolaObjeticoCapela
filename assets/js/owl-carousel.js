@@ -3452,15 +3452,7 @@ function ajustarCarrossel() {
 	const larguraJanela = window.innerWidth;
 	const carrossel = document.querySelector('.carrossel');
   
-	if (larguraJanela <= 600) {
-	  // Ajuste o carrossel para telas pequenas
-	  carrossel.style.display = 'block'; // Certifique-se de que está visível
-	  // Adicione outros ajustes necessários
-	} else {
-	  // Ajuste o carrossel para telas maiores
-	  carrossel.style.display = 'flex'; // Ou outro valor apropriado
-	  // Adicione outros ajustes necessários
-	}
+
   }
   
   // Adiciona um listener para o evento de redimensionamento
