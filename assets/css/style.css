@@ -553,15 +553,15 @@ section.courses {
 }
 
 section.courses .item img {
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px
 }
 
 section.courses .item .down-content {
   padding: 30px;
   background-color: #ffffff;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px
 }
 
 section.courses .item .down-content h4 {
@@ -1626,27 +1626,33 @@ footer {
     position: relative;
     top: 5rem;
   }
+  section.courses .owl-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
 
-  section.courses {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  section.courses .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Certifique-se de que ocupa a largura total */
   }
 
   section.courses .item img {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    width: 100%; /* Ajuste para ocupar a largura total */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
   }
 
   section.courses .item .down-content {
-    padding: 30px;
-  }
-
-  section.courses .item .down-content h4 {
-    font-size: 1.2rem;
-  }
-
-  section.courses .item .down-content p {
-    font-size: 0.9rem;
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    width: 100%; /* Ajuste para ocupar a largura total */
   }
 
   section.video {
@@ -1711,27 +1717,15 @@ footer {
     margin: 0 auto;
   }
 
-  section.courses .owl-stage {
-    display: flex;
-    justify-content: center;
-  }
-
-  section.courses .owl-stage-outer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
   section.courses .item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    /* Ocupa a largura total */
+    width: 100%; /* Certifique-se de que ocupa a largura total */
   }
 
   section.courses .item img {
-    width: 40%;
+    width: 60%; 
     height: auto;
     display: block;
     margin: 0 auto;
@@ -1741,19 +1735,8 @@ footer {
   section.courses .item .down-content {
     padding: 20px;
     background-color: #ffffff;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 10px;
-    width: 40%;
-  }
-
-  section.courses .item .down-content h4 {
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #1e1e1e;
-    letter-spacing: 0.5px;
-    font-weight: 700;
-    margin-top: 0px;
-    margin-bottom: 20px;
+    text-align: center;
+    width: 60%; /* Ajuste para ocupar a largura total */
   }
 
   section.contact {
@@ -1807,8 +1790,7 @@ footer {
   section.courses .item .down-content {
     padding: 20px;
     background-color: #ffffff;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 10px;
+    text-align: center;
     width: 50%;
   }
 
@@ -1925,8 +1907,7 @@ footer {
   section.courses .item .down-content {
     padding: 20px;
     background-color: #ffffff;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 10px;
+    text-align: center;
     width: 50%;
   } 
 
@@ -1947,16 +1928,6 @@ footer {
     padding-bottom: 5rem;
   }
    
-  section.video .left-content {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-  section.video .left-content span {
-    position: relative;
-    left: 0;
-    top: 0;
-  }
  
   section.video .left-content h4   {
     margin-top: 20px;
@@ -1971,17 +1942,37 @@ footer {
     font-style: normal;
     color: #ffd700;
   }
-
+  
+  section.video .left-content p {
+    font-size: 1rem;
+  }
+  
+  section.video .left-content span {
+    font-size: 1rem;
+  }
+  
+  section.video .left-content a {
+    font-size: 1rem;
+  }
+  section.video .left-content {
+    position: relative;
+    top: 0;
+    left: 1rem; 
+  }
  
   .video-item .video-caption {  
    display: none;
   }
-
+  .video-item figure a {
+    position: relative;
+    top: 0;
+    right: 1rem;
+  }
   .video-item figure a:before {
     content: '';
     position: absolute;
-    top: 11rem;
-    left: 14rem;
+    top: 10.3rem;
+    left: 13.5rem;
     right: 15px;
     width: 60px;
     height: 60px;
@@ -1990,8 +1981,128 @@ footer {
   .video-item figure a:after {
     content: '';
     position: absolute;
-    top: 10rem;
-    left: 13.9rem;
+    top: 9.3rem;
+    left: 13.3rem;
+  }
+
+  /* contact  */
+
+  section.contact {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    text-align: center;
+  }
+
+  .colorful-form {
+    width: 300px;
+  }
+
+  #map iframe {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 300px;
   }
 }
 
+@media (max-width: 375px) {
+ 
+ .main-header .logo {
+    margin-left: 20px;
+    
+  }
+  .section-heading h2 {
+    font-size: 1.4rem;
+  }
+
+  .main-banner .caption h2 {
+    font-size: 1.4rem;
+  }
+
+  .main-banner .caption h6 {
+    font-size: 0.8rem;
+    top: 1.5rem;
+  }
+  #tabs p {
+    font-size: 1rem;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+  .row img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  .whatsapp-button img {
+    width: 40px;
+    height: 40px;
+  }
+  .whatsapp-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #25D366;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  /* curses */
+
+  section.courses .item img {  
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  section.courses .item .down-content {
+    padding: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    width: 50%;
+  } 
+
+  section.courses .item .down-content h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #1e1e1e;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  
+  /* video */
+  section.video {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+   
+ 
+  section.video .left-content {
+    position: relative;
+    top: 0;
+    left: 0.5rem; 
+  }
+ 
+  .video-item .video-caption {  
+   display: none;
+  }
+  .video-item figure a {
+    position: relative;
+    top: 0;
+    right: 2.5rem;
+  }
+  
+}

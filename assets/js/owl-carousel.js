@@ -3430,3 +3430,41 @@
 	}
 
 })(window.Zepto || window.jQuery, window, document);
+
+// Função para inicializar o carrossel
+function initializeCarousel() {
+    const $carousel = $('.owl-carousel');
+    $carousel.owlCarousel({
+        items: calculateItems(),
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 3 },
+            1000: { items: 5 }
+        }
+    });
+}
+
+// Função para ajustar o carrossel
+function ajustarCarrossel() {
+	const larguraJanela = window.innerWidth;
+	const carrossel = document.querySelector('.carrossel');
+  
+	if (larguraJanela <= 600) {
+	  // Ajuste o carrossel para telas pequenas
+	  carrossel.style.display = 'block'; // Certifique-se de que está visível
+	  // Adicione outros ajustes necessários
+	} else {
+	  // Ajuste o carrossel para telas maiores
+	  carrossel.style.display = 'flex'; // Ou outro valor apropriado
+	  // Adicione outros ajustes necessários
+	}
+  }
+  
+  // Adiciona um listener para o evento de redimensionamento
+  window.addEventListener('resize', ajustarCarrossel);
+  
+  // Chama a função ao carregar a página
+  ajustarCarrossel();
