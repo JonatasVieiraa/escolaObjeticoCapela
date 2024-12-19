@@ -555,15 +555,18 @@ section.courses {
 section.courses .item {
   position: relative;
   width: 100%;
-  height: 520px;
-  /* Aumentado para acomodar mais conteúdo */
-  background-color: #f2f2f2;
-  border-radius: 10px;
+  height: 470px;
   overflow: hidden;
-  perspective: 1000px;
-  box-shadow: 0 0 0 5px #ffffff80;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin: 0 auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: #debd00 solid 1px;
+  border-radius: 5%;
 }
 
 /* Card Image */
@@ -595,8 +598,8 @@ section.courses .item .down-content {
 
 /* Hover Effects */
 section.courses .item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  transform: scale(0.9);
+
 }
 
 section.courses .item:hover img {
@@ -617,7 +620,7 @@ section.courses .item .down-content h4 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   text-align: center;
-   margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 section.courses .item .down-content h4 em {
@@ -631,7 +634,7 @@ section.courses .item .down-content p {
   font-size: 1.1rem;
   /* Aumentado */
   color: #555;
-  text-align:  left;
+  text-align: left;
 }
 
 /* Video */
@@ -844,11 +847,14 @@ footer {
   }
 
   section.courses .item {
-    height: 480px;
+    height: 400px;
+    width: 105%;
   }
+
   section.courses .item .down-content h4 {
     font-size: 1.4rem;
   }
+
   section.courses .item .down-content p {
     font-size: 1rem;
   }
@@ -858,14 +864,14 @@ footer {
   .main-banner .caption h2 {
     font-size: 3rem;
   }
-
   section.courses .item {
-    height: 450px;
+    height: 330px;
   }
 
   section.courses .item .down-content h4 {
     font-size: 1.3rem;
   }
+
   section.courses .item .down-content p {
     font-size: 0.9rem;
   }
@@ -891,15 +897,17 @@ footer {
   }
 
   section.courses .item {
-    height: 420px;
+    height: 350px;
   }
 
   section.courses .item .down-content {
     padding: 30px;
   }
-  section.courses .item .down-content   h4 {
+
+  section.courses .item .down-content h4 {
     font-size: 1.3rem;
   }
+
   #tabs ul li a {
     font-size: 15px;
   }
@@ -1504,9 +1512,11 @@ footer {
   section.courses .item {
     height: 380px;
   }
+
   section.courses .item .down-content h4 {
     font-size: 1.3rem;
   }
+
   section.courses .item .down-content p {
     font-size: 0.9rem;
   }
@@ -1854,8 +1864,8 @@ footer {
   }
 
   section.courses .item {
-    height: 300px;
-    width: 80%;
+    height: 400px;
+    width: 70%;
   }
 
   section.courses .item .down-content {
@@ -1962,13 +1972,15 @@ footer {
 
   /* curses */
   section.courses .item {
-    height: 280px;
+    height: 370px;
   }
 
   section.courses .item .down-content h4 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
-
+  section.courses .item .down-content p {
+    font-size: 1rem;
+  }
   /* video */
   section.video {
     padding-top: 5rem;
@@ -2064,7 +2076,7 @@ footer {
   }
 
   .section-heading h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .main-banner .caption h2 {
@@ -2114,7 +2126,7 @@ footer {
 
   /* curses */
   section.courses .item {
-    height: 260px;
+    height: 350px;
   }
 
   /* video */
@@ -2150,7 +2162,7 @@ footer {
   }
 
   .section-heading h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .main-banner .caption h2 {
@@ -2200,7 +2212,7 @@ footer {
 
   /* curses */
   section.courses .item {
-    height: 240px;
+    height: 350px;
   }
 
   section.courses .item .down-content {
