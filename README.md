@@ -16,7 +16,7 @@ Este projeto consiste em uma landing page moderna e responsiva desenvolvida para
 - Performance e carregamento rápido
 
 🖥️ **Demonstração**  
-Para visualizar o projeto em funcionamento, acesse: [Colégio Objetivo Capela do Alto](#)
+Para visualizar o projeto em funcionamento, acesse: [Colégio Objetivo Capela do Alto](https://colegioobjetivocapela.com.br/)
 
 🎯 **Funcionalidades**
 - Apresentação das informações institucionais
