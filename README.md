@@ -27,7 +27,7 @@ Informações sobre processo de matrícula
 
 🛠️ Instalação
 Para executar este projeto localmente, siga estas etapas:
-bashCopy# Clone este repositório
+Copy# Clone este repositório
 git clone https://github.com/JonatasVieiraa/escolaObjeticoCapela.git
 
 # Acesse a pasta do projeto
@@ -44,3 +44,7 @@ Notebooks
 
 👨‍💻 Desenvolvedor
 Desenvolvido por Jonatas Vieira
+📄 Licença
+Este projeto está sob a licença MIT - veja o arquivo LICENSE.md para mais detalhes.
+
+⌨️ com ❤️ por Jonatas Vieira
